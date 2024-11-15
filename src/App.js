@@ -12,11 +12,26 @@ const shootFunction=() =>{
   if(counter <10) {
     setCounter(counter+1)
   }
-  else if(counter >= 10 && counter <100){
+  else if (counter ===10){
+    alert("Upgrade System");
     setCounter(counter+10)
   }
-  else if(counter >= 100 && counter <1000){
+  else if(counter > 11 && counter <100){
+    setCounter(counter+10)
+  }
+  else if (counter ===100){
+    alert("Upgrade Speed");
     setCounter(counter+100)
+  }
+  else if(counter > 101 && counter <1000){
+    setCounter(counter+100)
+  }
+  else if (counter ===1000){
+    alert("Upgrade Ship");
+    setCounter(counter+1000)
+  }
+  else if(counter > 1001 && counter <1000000){
+    setCounter(counter+1000)
   }
 }
 
