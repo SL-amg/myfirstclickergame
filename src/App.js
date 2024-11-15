@@ -30,8 +30,12 @@ const shootFunction=() =>{
     alert("Upgrade Ship");
     setCounter(counter+1000)
   }
-  else if(counter > 1001 && counter <1000000){
+  else if(counter > 1001 && counter <170000){
     setCounter(counter+1000)
+  }
+  else if(counter === 170000 ){
+    alert("Are you sure you want to keep on playing ?!");
+    setCounter(counter)
   }
 }
 
