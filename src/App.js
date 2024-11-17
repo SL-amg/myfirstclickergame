@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ButtonView from './components/ButtonView';
 import * as React from 'react';
 import { render } from 'react-dom';
+import PlaneView from './components/PlaneView';
 
 function App() {
   // JS location:
@@ -13,7 +14,7 @@ function App() {
 
 
   const shootFunction = () => {
-    if (counter < 10 ) {
+    if (counter < 10) {
       setCounter(counter + 1)
     }
     else if (counter === 10) {
@@ -43,11 +44,9 @@ function App() {
     }
   }
 
-
   React.useEffect(() => {
     timer > 0 && setTimeout(() => setTimer(timer - 1), 1000);
   }, [timer]); //timer function from Web
-
 
 
   // JSX Location:
@@ -82,20 +81,18 @@ function App() {
       {/* Game Body */}
 
       <div className='gameBody'>
-
         <img className='alianGif' src='https://i.giphy.com/Qs6PlzCPQ6wXyBIUe8.webp' />
       </div>
 
       {/* plane and shoot div*/}
       <div className='planeAndButton'>
-        <img onClick={shootFunction} src='https://s3.amazonaws.com/cartoonsmartstreaming/wp-content/uploads/2014/12/05002726/veering.png' /> {/* to shoot if press on plane  */}
-        <ButtonView  gameOver={timer === 0} handleClick={shootFunction} name={'Shoot !!'} />
+       <PlaneView gameOver={timer === 0} handleClick={shootFunction}/>
+        <ButtonView gameOver={timer === 0} handleClick={shootFunction} name={'Shoot !!'} />
       </div>
       {/* Game Cridits */}
       <div className='creditDiv'>
         This game is created by: Abdullah Al Abbas
       </div>
-
     </div>
   );
 }
